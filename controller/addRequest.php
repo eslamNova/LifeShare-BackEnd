@@ -1,10 +1,10 @@
 <?php
-function addRequest($hospitalName,$userName,$bloodType){
+function addRequest($userName,$hospitalName,$address,$bloodType){
 require "../model/connect.php";
 $result=connectToDB();
 if($result!==false){
 $connect=$result;
-@mysqli_query($connect,"insert into requests (hospitalName,userName,email,bloodType) values ('$name','$userName','$bloodType')");
+@mysqli_query($connect,"insert into requests (userName,hospitalName,address,bloodType) values ('$userName','$hospitalName','$address','$bloodType')");
 }else{
 $result=false;
 }
